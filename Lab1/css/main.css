@@ -15,12 +15,10 @@ header{
     border-radius: 5px;
 }
 form label{
-    float: left;
-    margin-left: 30%;
-}
-form input{
-    float: right;
-    margin-right: 30%;
+    display: inline-block;
+    width: 40%;
+    text-align: right;
+    margin: auto
 }
 #btns{
     text-align: center;
@@ -30,4 +28,10 @@ form input{
 }
 img{
     width: 30%;
+    display: block;
+    margin: auto;
+}
+footer{
+    margin-top: 1em;
+    text-align: center;
 }

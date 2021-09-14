@@ -17,20 +17,22 @@
     </header>
     <div id="input-box">
         <p>Enter Subtotal and Tax Rate and click the Calculate button to show the sales tax amount and the total. Click the clear button to clear out all the form fields. Tax rate should be a percentage but do not ender a % sign in the tax rate box.</p>
-        <form action="/action_page.php">
-            <label for="stotal">Subtotal:</label>
-            <input type="text" id="stotal" name="stotal"><br><br>
-            <label for="taxrate">Tax Rate:</label>
-            <input type="text" id="taxrate" name="taxrate"><br><br>
-            <label for="stax">Sales Tax:</label>
-            <input type="text" id="stax" name="stax" readonly><br><br>
-            <label for="total">Total:</label>
-            <input type="text" id="total" name="total" readonly><br><br>
-            <div id="btns">
-                <button id="calculate" type="button" class="btn btn-primary">Submit</button>
-                <button id="clear" type="button" class="btn btn-light">Clear</button>
-            </div>
-        </form>
+        <div class="settings">
+            <form action="/action_page.php">
+                <label for="stotal">Subtotal:</label>
+                <input type="text" id="stotal" name="stotal"><br><br>
+                <label for="taxrate">Tax Rate:</label>
+                <input type="text" id="taxrate" name="taxrate"><br><br>
+                <label for="stax">Sales Tax:</label>
+                <input type="text" id="stax" name="stax" readonly><br><br>
+                <label for="total">Total:</label>
+                <input type="text" id="total" name="total" readonly><br><br>
+                <div id="btns">
+                    <button id="calculate" type="button" class="btn btn-primary">Submit</button>
+                    <button id="clear" type="button" class="btn btn-light">Clear</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <div id="img-box">
