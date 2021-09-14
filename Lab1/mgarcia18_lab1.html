@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <h3>ITMD-465 Lab 1 - Maria Garcia - mgarcia18@hawk.iit.edu</h3>
+        <h3 class="lead">ITMD-465 Lab 1 - Maria Garcia - mgarcia18@hawk.iit.edu</h3>
         <h1>Sales Tax Calculator</h1>
     </header>
     <div id="input-box">
@@ -23,13 +23,19 @@
             <label for="taxrate">Tax Rate:</label>
             <input type="text" id="taxrate" name="taxrate"><br><br>
             <label for="stax">Sales Tax:</label>
-            <input type="text" id="stax" name="stax"><br><br>
-            <button type="button" class="btn btn-primary">Submit</button>
-            <button type="button" class="btn btn-light">Clear</button>
+            <input type="text" id="stax" name="stax" readonly><br><br>
+            <label for="total">Total:</label>
+            <input type="text" id="total" name="total" readonly><br><br>
+            <div id="btns">
+                <button id="calculate" type="button" class="btn btn-primary">Submit</button>
+                <button id="clear" type="button" class="btn btn-light">Clear</button>
+            </div>
         </form>
     </div>
 
-    <img src="img/main-img.jpg" alt="picture of calculator and pen">
+    <div id="img-box">
+        <img src="img/main-img.jpg" alt="picture of calculator and pen">
+    </div>
 
     <footer>
         <p>&copy; 2021 Maria Garcia | mgarcia18@hawk.iit.edu</p>
