@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BootStrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Lab 1</title>
+</head>
+<body>
+    <header>
+        <h3>ITMD-465 Lab 1 - Maria Garcia - mgarcia18@hawk.iit.edu</h3>
+        <h1>Sales Tax Calculator</h1>
+    </header>
+    <div id="input-box">
+        <p>Enter Subtotal and Tax Rate and click the Calculate button to show the sales tax amount and the total. Click the clear button to clear out all the form fields. Tax rate should be a percentage but do not ender a % sign in the tax rate box.</p>
+        <form action="/action_page.php">
+            <label for="stotal">Subtotal:</label>
+            <input type="text" id="stotal" name="stotal"><br><br>
+            <label for="taxrate">Tax Rate:</label>
+            <input type="text" id="taxrate" name="taxrate"><br><br>
+            <label for="stax">Sales Tax:</label>
+            <input type="text" id="stax" name="stax"><br><br>
+            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-light">Clear</button>
+        </form>
+    </div>
+
+    <img src="img/main-img.jpg" alt="picture of calculator and pen">
+
+    <footer>
+        <p>&copy; 2021 Maria Garcia | mgarcia18@hawk.iit.edu</p>
+    </footer>
+    
+</body>
+</html>
