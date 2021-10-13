@@ -28,7 +28,7 @@
                 <label for="total">Total:</label>
                 <input type="text" id="total" name="total" disabled><br><br>
                 <div id="btns">
-                    <button id="calculate" type="button" class="btn btn-primary">Submit</button>
+                    <button id="submit" type="button" class="btn btn-primary">Submit</button>
                     <button id="clear" type="button" class="btn btn-light">Clear</button>
                 </div>
             </form>
@@ -48,6 +48,14 @@
 <script>
     window.addEventListener('DOMContentLoaded', function(evt){
         console.log('DOM fully loaded and parsed');
+
+        document.getElementById("submit").addEventListener("click", function() {
+            console.log('Submit btn clicked');
+        });
+
+        document.getElementById("clear").addEventListener("click", function() {
+            console.log('Clear btn clicked');
+        });
     });
 </script>
 </html>
