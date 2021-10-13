@@ -20,9 +20,9 @@
         <div class="settings">
             <form action="/action_page.php">
                 <label for="stotal">Subtotal:</label>
-                <input type="text" id="stotal" name="stotal"><br><br>
+                <input type="number" id="stotal" name="stotal"><br><br>
                 <label for="taxrate">Tax Rate:</label>
-                <input type="text" id="taxrate" name="taxrate"><br><br>
+                <input type="number" id="taxrate" name="taxrate"><br><br>
                 <label for="stax">Sales Tax:</label>
                 <input type="text" id="stax" name="stax" disabled><br><br>
                 <label for="total">Total:</label>
@@ -51,10 +51,27 @@
 
         document.getElementById("submit").addEventListener("click", function() {
             console.log('Submit btn clicked');
+            let input_stotal = document.getElementById('stotal').value;
+            let input_tax = document.getElementById('taxrate').value;
+
+            if(input_tax <= 0 || input_tax > 20){
+                alert("Tax rate must be greater than 0 and less than or equal to 20.")
+            }else{
+                let tax = input_tax / 100;
+                let sales_tax = tax * input_stotal;
+                let total = +input_stotal + +sales_tax;
+
+                document.getElementById("stax").value = sales_tax;
+                document.getElementById("total").value = total;
+            }
         });
 
         document.getElementById("clear").addEventListener("click", function() {
             console.log('Clear btn clicked');
+            document.getElementById("stotal").value = '';
+            document.getElementById("taxrate").value = '';
+            document.getElementById("stax").value = '';
+            document.getElementById("total").value = '';
         });
     });
 </script>
