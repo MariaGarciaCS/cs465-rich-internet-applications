@@ -48,33 +48,35 @@
 <script>
     window.addEventListener('DOMContentLoaded', function(evt){
         console.log('DOM fully loaded and parsed');
-
-        document.getElementById("submit").addEventListener("click", function() {
-            console.log('Submit btn clicked');
-            let input_stotal = document.getElementById('stotal').value;
-            let input_tax = document.getElementById('taxrate').value;
-
-            if(input_stotal <=0){
-                alert("Subtotal must be greater than 0")
-            }else if(input_tax <= 0 || input_tax > 20){
-                alert("Tax rate must be greater than 0 and less than or equal to 20.")
-            }else{
-                let tax = input_tax / 100;
-                let sales_tax = tax * input_stotal;
-                let total = +input_stotal + +sales_tax;
-
-                document.getElementById("stax").value = sales_tax;
-                document.getElementById("total").value = total;
-            }
-        });
-
-        document.getElementById("clear").addEventListener("click", function() {
-            console.log('Clear btn clicked');
-            document.getElementById("stotal").value = '';
-            document.getElementById("taxrate").value = '';
-            document.getElementById("stax").value = '';
-            document.getElementById("total").value = '';
-        });
+        document.getElementById("submit").addEventListener("click", calculateValues);
+        document.getElementById("clear").addEventListener("click", clearFields);
     });
+
+    function calculateValues(){
+        console.log('Submit btn clicked');
+        let input_stotal = document.getElementById('stotal').value;
+        let input_tax = document.getElementById('taxrate').value;
+
+        if(input_stotal <=0){
+            alert("Subtotal must be greater than 0")
+        }else if(input_tax <= 0 || input_tax > 20){
+            alert("Tax rate must be greater than 0 and less than or equal to 20.")
+        }else{
+            let tax = input_tax / 100;
+            let sales_tax = tax * input_stotal;
+            let total = +input_stotal + +sales_tax;
+
+            document.getElementById("stax").value = sales_tax;
+            document.getElementById("total").value = total;
+        }
+    }
+
+    function clearFields(){
+        document.getElementById("stotal").value = '';
+        document.getElementById("taxrate").value = '';
+        document.getElementById("stax").value = '';
+        document.getElementById("total").value = '';
+    }
+    
 </script>
 </html>
