@@ -87,9 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Section 4 ///////////////////////////////////////////////////
-  /*
- 
-  */
   const quantityInput = document.getElementById('sec4-input1');
   const colorInput = document.getElementById('sec4-select1');
   const addBoxes = document.getElementById('sec4-btn1');
@@ -134,5 +131,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Section 5 ///////////////////////////////////////////////////
+  const keyInput = document.getElementById('sec5-input');
+  const lastKeyBox = document.getElementById('sec5-contentarea');
+
+  keyInput.addEventListener('keydown', (e) => {
+    console.log("Section 4: addBoxes btn");
+    newKey = document.createElement("span");
+    newKey.innerHTML = e.key;
+    newKey.style.fontSize = "60";
+    newKey.style.fontWeight = "bold";
+    if(lastKeyBox.hasChildNodes()){
+      lastKeyBox.removeChild(lastKeyBox.firstChild);
+    }
+    lastKeyBox.appendChild(newKey);
+  });
+
+
+
   // Section 6 ///////////////////////////////////////////////////
-})
+
+});
