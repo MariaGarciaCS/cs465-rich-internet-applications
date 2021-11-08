@@ -16,22 +16,34 @@ sec1_btn.addEventListener("click", function(){
 });
 
 // Section 2 ///////////////////////////////////////////////////
-/*
-
-Change the Headline text to your name.
-Change the green box to a grey, #888888, box that is 100% wide and 20px tall.
-Change the styles on the paragraph of text so it is bold, italic, and 12px in size.
-Change the B&W hamburger icon to the color one provided, change the alt tag to 'Color Hamburger Icon', change the size of the icon so it is only 100px wide.
-Change the Google link to a link to the Illinois Tech website, www.iit.edu, and also change the text of the link to 'Illinois Tech Website'.
-Change the styling on the link so that it is red, #cc0000, and underlined.
-*/ 
-
 var sec2_btn = document.getElementById('sec2-btn1');
 sec2_btn.addEventListener("click", function(){
   console.log("Section 2 button clicked");
   var sec2_area = document.getElementById('sec2-contentarea');
+
   var headline = sec2_area.getElementsByTagName('h3')[0];
   headline.innerHTML = "Maria Garcia";
+
+  var box = document.getElementById('sec2-box');
+  box.style.backgroundColor = "#888888";
+  box.style.width = "100%";
+  box.style.height = "20px";
+
+  var paragraph = sec2_area.getElementsByTagName('p')[0];
+  paragraph.style.fontStyle = "italic";
+  paragraph.style.fontWeight = "bold";
+  paragraph.style.fontSize = "12px";
+
+  var hamburger = sec2_area.getElementsByTagName('img')[0];
+  hamburger.src = "img/hamburger_color_icon.png";
+  hamburger.alt = "Color Hamburger Icon";
+  hamburger.width = "100";
+
+  var link = sec2_area.getElementsByTagName('a')[0];
+  link.href = "https://www.iit.edu/";
+  link.innerHTML = "Illinois Tech Website";
+  link.style.color = "#cc0000";
+  link.style.textDecoration = "underline"
 
 });
 
