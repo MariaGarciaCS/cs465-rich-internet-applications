@@ -87,6 +87,52 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Section 4 ///////////////////////////////////////////////////
+  /*
+ 
+  */
+  const quantityInput = document.getElementById('sec4-input1');
+  const colorInput = document.getElementById('sec4-select1');
+  const addBoxes = document.getElementById('sec4-btn1');
+  const boxArea = document.getElementById('sec4-contentarea');
+  const clearBoxes = document.getElementById('sec4-btn2');
+
+  addBoxes.addEventListener('click', () => {
+    console.log("Section 4: addBoxes btn");
+
+    var quantity = quantityInput.value;
+    var color = colorInput.value;
+    console.log(`Quantity: ${quantity}, Color: ${color}`);
+
+    if(!(quantity === "")){
+      if(!isNaN(quantity)){
+
+      }else{
+        alert("A non-numeric value was entered!");
+      }
+    }else{
+      alert("No value has been entered!");
+    }
+
+    for(i = 1; i<= quantity; i++){
+      var newBox = document.createElement("div");
+      newBox.style.display = "inline-block";
+      newBox.style.height = "60px";
+      newBox.style.width = "60px";
+      newBox.style.margin = "5";
+      newBox.style.backgroundColor = color;
+
+      boxArea.appendChild(newBox);
+    }
+  });
+
+  clearBoxes.addEventListener('click', () => {
+    console.log("Section 4: clearBoxes btn");
+
+    while(boxArea.firstChild){
+      boxArea.removeChild(boxArea.firstChild);
+    }
+  });
+
   // Section 5 ///////////////////////////////////////////////////
   // Section 6 ///////////////////////////////////////////////////
 })
