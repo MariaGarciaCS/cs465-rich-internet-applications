@@ -158,18 +158,22 @@ document.addEventListener('DOMContentLoaded', () => {
     var list = document.createElement("ul");
     resultArea.appendChild(list);
 
-    var json = fetch('https://jsonplaceholder.typicode.com/')
+    fetch("https://jsonplaceholder.typicode.com/users")
     .then(response => response.json())
-    .then(json => console.log(json))
-
-    for(var f in json){
-      if(json.hasOwnProperty(f)){
-        console.log(f + json[f])
+    .then(data => {
+      for (var i = 0; i < data.length; i++) {
+        let listItem = document.createElement('li');
+        listItem.appendChild(
+          document.createElement('p')
+        ).textContent = `${data[i].name}, ${data[i].email}`;
+        list.appendChild(listItem);
       }
-    }
-    
-    
+    })
+    .catch(console.error);
+    getDataBtn.disabled = true;
   });
+
+  
 
   clearResultsBtn.addEventListener('click', () => {
     console.log("Section 6: clearResults btn");
@@ -177,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     while(resultArea.firstChild){
       resultArea.removeChild(resultArea.firstChild);
     }
+    getDataBtn.disabled = false;
   });
 
 });//DOMContentLoaded
