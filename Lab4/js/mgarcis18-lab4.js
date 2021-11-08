@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
       newBox.style.display = "inline-block";
       newBox.style.height = "60px";
       newBox.style.width = "60px";
-      newBox.style.margin = "5";
+      newBox.style.margin = "5px";
       newBox.style.backgroundColor = color;
 
       boxArea.appendChild(newBox);
@@ -135,19 +135,48 @@ document.addEventListener('DOMContentLoaded', () => {
   const lastKeyBox = document.getElementById('sec5-contentarea');
 
   keyInput.addEventListener('keydown', (e) => {
-    console.log("Section 4: addBoxes btn");
+    console.log("Section 5: key input");
     newKey = document.createElement("span");
     newKey.innerHTML = e.key;
-    newKey.style.fontSize = "60";
+    newKey.style.fontSize = "60px";
     newKey.style.fontWeight = "bold";
+    keyInput.value = "";
     if(lastKeyBox.hasChildNodes()){
       lastKeyBox.removeChild(lastKeyBox.firstChild);
     }
     lastKeyBox.appendChild(newKey);
   });
 
-
-
   // Section 6 ///////////////////////////////////////////////////
+  const getDataBtn = document.getElementById('sec6-btn1');
+  const clearResultsBtn = document.getElementById('sec6-btn2');
+  const resultArea = document.getElementById('sec6-contentarea');
 
-});
+  getDataBtn.addEventListener('click', () => {
+    console.log("Section 6: getData btn");
+
+    var list = document.createElement("ul");
+    resultArea.appendChild(list);
+
+    var json = fetch('https://jsonplaceholder.typicode.com/')
+    .then(response => response.json())
+    .then(json => console.log(json))
+
+    for(var f in json){
+      if(json.hasOwnProperty(f)){
+        console.log(f + json[f])
+      }
+    }
+    
+    
+  });
+
+  clearResultsBtn.addEventListener('click', () => {
+    console.log("Section 6: clearResults btn");
+
+    while(resultArea.firstChild){
+      resultArea.removeChild(resultArea.firstChild);
+    }
+  });
+
+});//DOMContentLoaded
