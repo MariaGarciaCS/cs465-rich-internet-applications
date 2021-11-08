@@ -49,6 +49,43 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Section 3 ///////////////////////////////////////////////////
+  var sec3_convert = document.getElementById('sec3-btn1');
+  var sec3_clear = document.getElementById('sec3-btn2');
+  var sec3_input = document.getElementById('sec3-input');
+  var sec3_results = document.getElementById('sec3-contentarea');
+
+  function cToF(c){
+    return c * 9 / 5 + 32;
+  }
+
+  sec3_convert.addEventListener('click', () =>{
+    console.log("Section 3: Convert btn");
+    var input = sec3_input.value;
+
+    if(!(input === "")){
+      if(!isNaN(input)){
+        var newResult = document.createElement("p");
+        newResult.innerHTML = `${input} degrees celsius is equal to ${cToF(input)} degrees fahrenheit`;
+        sec3_results.appendChild(newResult);
+        sec3_input.value = "";
+      }
+      else{
+        alert("A non-numeric value was entered!");
+      }
+    }
+    else{
+      alert("No value has been entered!")
+    }
+  });
+
+  sec3_clear.addEventListener('click', () =>{
+    console.log("Section 3: Clear btn");
+
+    while(sec3_results.firstChild){
+      sec3_results.removeChild(sec3_results.firstChild);
+    }
+  });
+
   // Section 4 ///////////////////////////////////////////////////
   // Section 5 ///////////////////////////////////////////////////
   // Section 6 ///////////////////////////////////////////////////
