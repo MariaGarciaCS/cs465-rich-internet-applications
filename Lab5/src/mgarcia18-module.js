@@ -53,7 +53,8 @@ export function getData(){
       }
     })
     .catch(console.error);
-    // getDataBtn.disabled = true;
+
+    document.getElementById('getData').disabled = true;
   
 
 }

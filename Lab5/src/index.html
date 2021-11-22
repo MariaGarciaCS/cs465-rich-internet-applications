@@ -6,8 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mgarcia18 - Lab 5</title>
   <style media="all">
-    body{
-      
+    table{
+      margin: 20px auto;
+      width: 90%;
+    }
+    th, td{
+      font-size: 25px;
+      padding: 5px;
+    }
+    table, th, td {
+      border: 1px solid black;
     }
     
   </style>
@@ -18,7 +26,6 @@
   <div id="results"></div>
   <script type="module">
     import {getData} from './mgarcia18-module.js';
-    // console.log(`Get Data ${getData()}`);
     document.getElementById('getData').addEventListener('click', function(){
         getData();
       });
