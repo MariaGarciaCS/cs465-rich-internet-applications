@@ -31,11 +31,11 @@ export function getData(){
     .then(data => {
       for (var i = 0; i < data.length; i++) {
         let newRow = document.createElement('tr');
-  let newID = document.createElement('td');
-  let newName = document.createElement('td');
-  let newUserName = document.createElement('td');
-  let newEmail = document.createElement('td');
-  let newPhone = document.createElement('td');
+        let newID = document.createElement('td');
+        let newName = document.createElement('td');
+        let newUserName = document.createElement('td');
+        let newEmail = document.createElement('td');
+        let newPhone = document.createElement('td');
         
         
         newID.innerHTML = `${data[i].id}`;
