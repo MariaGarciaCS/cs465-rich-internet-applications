@@ -5,6 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mgarcia18 - Lab 5</title>
+  <style media="all">
+    body{
+      
+    }
+    
+  </style>
 </head>
 <body>
   <h1>mgarcia18-Lab 5</h1>
@@ -12,7 +18,10 @@
   <div id="results"></div>
   <script type="module">
     import {getData} from './mgarcia18-module.js';
-    console.log(`Get Data ${getData()}`);
+    // console.log(`Get Data ${getData()}`);
+    document.getElementById('getData').addEventListener('click', function(){
+        getData();
+      });
   </script>
 </body>
 </html>
